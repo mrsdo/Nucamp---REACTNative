@@ -49,6 +49,16 @@
 
 ![IOS Screen](dev-assets/expo-from-ios-2022120392409AM.jpg)
 
+### IOS/Android Notes
+> NOTE: Shake phone to load options screen.
+> - Consider (downloading Android Studio)[https://developer.android.com/studio?gclsrc=aw.ds&gclsrc=ds&gclsrc=aw.ds#downloads]
+- Open Android Studio:
+- More Actions > Virtual Device Manager
+- Start AVD by pressing play button
+
+> From terminal: npx expo start  
+
+
 ---
 ## Week-02
 
