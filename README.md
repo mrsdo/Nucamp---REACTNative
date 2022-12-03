@@ -32,6 +32,24 @@
 
 › Press Ctrl-C to quit
 
+### Update Locked Versions
+
+>- From the terminal: npm install expo@46.0.13 expo-status-bar@1.4.0 react@18.0.0 react-native@0.69.6
+
+### Install Android Virtual Device (AVD)
+> NOTE: AVD is process intensive. May require alternative such
+> (Run app on mobile device)[https://learn.nucamp.co/mod/book/view.php?id=6244&chapterid=6534]
+> - Needs:
+> - Download for Android from the Play Store (Android 5.0+)
+    Download for iOS from the App Store. (iOS 12.0+)
+
+- Device must be on same network as computer
+- npm start from the app directory
+- Scan the QR code provided
+
+![IOS Screen](dev-assets/expo-from-ios-2022120392409AM.jpg)
+
+---
 ## Week-02
 
 
@@ -68,3 +86,8 @@ TODO: Try typing s + to see what this does.
 
 ### Update NPM 8.19.2 -> 9.1.3
 Terminal: npm i -g npm@9.1.3
+
+### Watchman error Fix
+Not sure why this occurred but now npm start has no errors
+> From terminal:
+> - watchman watch-del '/Users/mach3-dtserv/Nucamp---REACTNative.nosync' ; watchman watch-project '/Users/mach3-dtserv/Nucamp---REACTNative.nosync'
