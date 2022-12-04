@@ -95,6 +95,9 @@ Options
 For more info run a command with the --help flag
 $ npx expo start --help
 
+### Assignment: Adding Images and Campsite Data
+![IOS Screen](dev-assets/Screenshot 2022120473828AM.jpeg)
+
 
 
 ---
