@@ -47,8 +47,6 @@
 - npm start from the app directory
 - Scan the QR code provided
 
-![IOS Screen](dev-assets/expo-from-ios-2022120392409AM.jpg)
-
 ### IOS/Android Notes
 > NOTE: Shake phone to load options screen.
 > - Consider (downloading Android Studio)[https://developer.android.com/studio?gclsrc=aw.ds&gclsrc=ds&gclsrc=aw.ds#downloads]
@@ -57,6 +55,46 @@
 - Start AVD by pressing play button
 
 > From terminal: npx expo start  
+
+
+![IOS Screen](dev-assets/expo-from-ios-2022120392409AM.jpg)
+
+![Android](dev-assets/Screen Shot 2022-12-03 at 7.54.49 PM.png)
+
+![Android](dev-assets/Screen Shot 2022-12-03 at 8.23.44 PM.png)
+
+> NOTE: The most consistent method for loading on devices is to use the QR Code scanned via Expo Go App.
+
+### React Native Resources
+[React Native Elements](https://reactnativeelements.com/docs/3.4.2/getting_started)
+
+> npm install react-native-elements
+
+[Stylesheet](https://reactnative.dev/docs/stylesheet)
+
+[Core Components & APIs](https://reactnative.dev/docs/components-and-apis )
+
+
+### Command Line Tools
+
+npx expo -h
+
+Usage
+$ npx expo <command>
+
+Commands
+start, export, export:web
+run:ios, run:android, prebuild
+install, customize, config
+login, logout, whoami, register
+
+Options
+--version, -v   Version number
+--help, -h      Usage info
+
+For more info run a command with the --help flag
+$ npx expo start --help
+
 
 
 ---
