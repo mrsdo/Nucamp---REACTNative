@@ -11,7 +11,7 @@ import RenderCampsite from '../features/campsites/RenderCampsite';
 const CampsiteInfoScreen = (props) => {
 
     return (
-        <RenderCampsite campsite={props.campsite} />
+        <RenderCampsite campsite={} {props.campsite} />
     );
 };
 
