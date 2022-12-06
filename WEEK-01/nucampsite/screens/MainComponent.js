@@ -24,7 +24,7 @@ const HomeNavigator = () => {
             <Stack.Screen
                 name='Home'
                 component={HomeScreen}
-                options={{ title: 'Home' }}
+                options={{ title: 'Nucamp Sites' }}
             />
         </Stack.Navigator>
     );
