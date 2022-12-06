@@ -11,5 +11,3 @@ r
 Bcode-challenges/react-native-flatlist-listitem-fix/shared/films.js,0/1/01683eee0d1aa6cfc369b261cf1fdc139b341810
 ‡
 Wcode-challenges/react-native-flatlist-listitem-fix/components/FilmCatalogueComponent.js,2/5/25c6b5025c0fce6d17af0c2b25a23b1253f54ca4
-‹
-[code-challenges/react-native-flatlist-listitem-fix/components/FilmCatalogueViewComponent.js,b/d/bd2e10a4a0b8efebeca404fc0e0a5cfab6d20678

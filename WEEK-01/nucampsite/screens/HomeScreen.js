@@ -46,9 +46,9 @@ const FeaturedItem = ({item}) => {
 
 const HomeScreen = () =>{
     // Create state variables for:
-    const [campsites, setCampsites] = useState(CAMPSITES);
-    const [promotions, setPromotions] = useState(PROMOTIONS);
-    const [partners, setPartners] = useState(PARTNERS);
+    const [campsites] = useState(CAMPSITES);
+    const [promotions] = useState(PROMOTIONS);
+    const [partners] = useState(PARTNERS);
 
     // Add objects to hold featured items for campsites, partners and promotions
     const featCampsite = campsites.find((item) => item.featured);
