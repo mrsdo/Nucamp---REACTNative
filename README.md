@@ -77,7 +77,8 @@
 
 ### Command Line Tools
 
-npx expo -h
+npx expo -h | List all commands available
+npx expo -c | Clear cache
 
 Usage
 $ npx expo <command>
