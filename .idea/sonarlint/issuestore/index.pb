@@ -1,8 +1,6 @@
 
 V
 &WEEK-01/nucampsite/shared/campsites.js,1/3/133bf7d75fb9f1d5112fa23a2bb778337f6f4522
-O
-WEEK-01/nucampsite/package.json,a/e/aeed1665dfdef59a1f2036adfbf5c6cef737fc8d
 7
 LICENSE,0/3/0398ccd0f49298b10a3d76a47800d2ebecd49859
 g

@@ -7,6 +7,25 @@ import DirectoryScreen from './DirectoryScreen';
 import { Platform, View } from 'react-native';
 import Constants from 'expo-constants';
 import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from '../screens/HomeScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const HomeNavigator = () => {
+    const Stack = createStackNavigator();
+
+    return (
+        <Stack.Navigator>
+
+        </Stack.Navigator>
+
+
+    );
+
+
+};
+
+
+const Drawer = createDrawerNavigator();
 
 //Create a function component named DirectoryNavigator above the Main function component.
 const DirectoryNavigator = () => {
