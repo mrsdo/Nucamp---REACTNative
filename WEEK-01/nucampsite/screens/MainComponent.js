@@ -1,4 +1,5 @@
 /**
+ * M. Dolce: marti.dolce@29signals.org | December 6, 2022 | React Native | Zoom: https://us06web.zoom.us/j/83235/586129
  * MainComponent
  */
 
