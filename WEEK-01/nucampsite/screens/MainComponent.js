@@ -2,43 +2,40 @@
  * MainComponent
  */
 
-import CampsiteInfoScreen from './CampsiteInfoScreen';
-import DirectoryScreen from './DirectoryScreen';
 import { Platform, View } from 'react-native';
 import Constants from 'expo-constants';
+import CampsiteInfoScreen from './CampsiteInfoScreen';
+import DirectoryScreen from './DirectoryScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from '../screens/HomeScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
-const HomeNavigator = () => {
-    const Stack = createStackNavigator();
-
-    return (
-        <Stack.Navigator>
-
-        </Stack.Navigator>
-
-
-    );
-
-
-};
-
+import HomeScreen from './HomeScreen';
 
 const Drawer = createDrawerNavigator();
 
-//Create a function component named DirectoryNavigator above the Main function component.
+const screenOptions = {
+    headerTintColor: '#fff',
+    headerStyle: { backgroundColor: '#5637DD' }
+};
+
+const HomeNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name='Home'
+                component={HomeScreen}
+                options={{ title: 'Home' }}
+            />
+        </Stack.Navigator>
+    );
+};
+
 const DirectoryNavigator = () => {
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator
             initialRouteName='Directory'
-            screenOptions={{
-                headerStyle: {
-                    backgroundColor: '#5637DD'
-                },
-                headerTintColor: '#fff'
-            }}
+            screenOptions={screenOptions}
         >
             <Stack.Screen
                 name='Directory'
@@ -53,11 +50,10 @@ const DirectoryNavigator = () => {
                 })}
             />
         </Stack.Navigator>
+    );
 
-            ); //End Return
 };
 
-// Create a constant named Main set equal to an arrow function and export Main at the bottom of this file outside of the arrow function body.
 const Main = () => {
     return (
         <View
@@ -67,7 +63,21 @@ const Main = () => {
                     Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
             }}
         >
-            <DirectoryNavigator />
+            <Drawer.Navigator
+                initialRouteName='Home'
+                drawerStyle={{ backgroundColor: '#CEC8FF' }}
+            >
+                <Drawer.Screen
+                    name='Home'
+                    component={HomeNavigator}
+                    options={{ title: 'Home' }}
+                />
+                <Drawer.Screen
+                    name='Campsite Directory'
+                    component={DirectoryNavigator}
+                    options={{ title: 'Directory' }}
+                />
+            </Drawer.Navigator>
         </View>
     );
 };
