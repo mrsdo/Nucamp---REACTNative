@@ -113,7 +113,7 @@ const Main = () => {
                     options={{ title: 'Directory' }}
                 />
                 <Drawer.Screen
-                    name='About'
+                    name='What We Do'
                     component={AboutNavigator}
                     options={{ title: 'About' }}
                 />
