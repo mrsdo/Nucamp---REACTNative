@@ -54,7 +54,7 @@ const ContactNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='About'
+                name='Contact'
                 component={ContactScreen}
                 options={{title: 'Contact Us'}}
             />
@@ -113,7 +113,7 @@ const Main = () => {
                     options={{ title: 'Directory' }}
                 />
                 <Drawer.Screen
-                    name='About Us'
+                    name='About'
                     component={AboutNavigator}
                     options={{ title: 'About' }}
                 />

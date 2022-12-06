@@ -17,7 +17,7 @@ const AboutScreen = () => {
     return (
 
         <ScrollView>
-                <Text>About</Text>
+
         </ScrollView>
 
     );
