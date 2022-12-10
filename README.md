@@ -59,7 +59,7 @@
 
 ![IOS Screen](dev-assets/expo-from-ios-2022120392409AM.jpg)
 
-![Android](dev-assets/Screen Shot 2022-12-03 at 7.54.49 PM.png)
+![Android](dev-assets/2022120375449PM.png)
 
 ![Android](dev-assets/Screen Shot 2022-12-03 at 8.23.44 PM.png)
 
@@ -97,8 +97,12 @@ For more info run a command with the --help flag
 $ npx expo start --help
 
 ### Assignment: Adding Images and Campsite Data
-![IOS Screen](dev-assets/Screenshot 2022120473828AM.jpeg)
-
+![IOS Screen](dev-assets/IMG_0991.PNG)
+![IOS Screen](dev-assets/IMG_0992.PNG)
+![IOS Screen](dev-assets/IMG_0993.PNG)
+![IOS Screen](dev-assets/IMG_0994.PNG)
+![IOS Screen](dev-assets/IMG_0995.PNG)
+![IOS Screen](dev-assets/IMG_0996.PNG)
 
 
 ---
