@@ -15,7 +15,6 @@ import { Card, Text } from '@rneui/themed';
 
 // Functional Component
 const ContactScreen = () => {
-    // const [text] = useState('');
 
     return (
 
