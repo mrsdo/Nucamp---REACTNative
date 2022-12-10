@@ -15,9 +15,6 @@ Wcode-challenges/react-native-flatlist-listitem-fix/components/FilmCatalogueComp
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 R
 "WEEK-01/nucampsite/babel.config.js,f/f/ffcbc62a85f9c3bfa48dfd616fcaa09a52060956
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 o
 ?code-challenges/react-native-flatlist-listitem-fix/package.json,5/2/5259a69d2f10a87ed778eb8dfb4388e69642827d
 W

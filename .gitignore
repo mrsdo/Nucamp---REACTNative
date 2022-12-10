@@ -9,6 +9,8 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+/WEEK-01/nucampsite.zip
+/WEEK-01/nucampsite 2.zip
 
 # macOS
 .DS_Store
