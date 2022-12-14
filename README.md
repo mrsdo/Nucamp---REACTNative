@@ -106,8 +106,11 @@ $ npx expo start --help
 
 
 ---
-## Week-02
+## Week-02: Ex01
+-- Display the comments for each campsite in the CampsiteInfo screen.
 
+-- Use the Icon component from React Native Elements to create a Favorite icon button that can be pressed to change the icon's appearance.
+![IOS Screen](dev-assets/IMG_1024.jpeg)
 
 
 
