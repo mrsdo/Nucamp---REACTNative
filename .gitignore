@@ -17,3 +17,7 @@ web-build/
 
 # JetBrains
 .idea/sonarlint
+
+# Custom
+/_archives/*.zip
+*.zip

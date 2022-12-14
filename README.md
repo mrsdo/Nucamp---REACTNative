@@ -107,9 +107,24 @@ $ npx expo start --help
 
 ---
 ## Week-02
+### Ex01
+-- Display the comments for each campsite in the CampsiteInfo screen.
 
+-- Use the Icon component from React Native Elements to create a Favorite icon button that can be pressed to change the icon's appearance.
+![IOS Screen](dev-assets/IMG_1024.jpeg)
 
+### Ex02
+-- Add icons to your Drawer and Stack Navigators to create a Favorite icon button that can be pressed to change the icon's appearance.
+![IOS Screen](dev-assets/IMG_1026.jpg)
+![IOS Screen](dev-assets/IMG_1027.jpg)
 
+### EX03
+> Added json-server
+> - Activities for this week are dependent on the json-server. The
+> - server must be installed and running for the activities to work.
+
+**To run the json-server use:**
+json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000
 
 ## Week-03
 
@@ -128,12 +143,7 @@ $ npx expo start --help
 ---
 ## NOTES FROM REACT Course
 
-### Added json-server
-Activities for this week are dependent on the json-server. The
-server must be installed and running for the activities to work.
 
-**To run the json-server use:**
-json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000
 
 **NOTE:**
 TODO: Try typing s + to see what this does.
