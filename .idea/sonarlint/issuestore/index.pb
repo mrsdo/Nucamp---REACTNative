@@ -20,8 +20,6 @@ X
 (nucampsite/screens/CampsiteInfoScreen.js,3/f/3f6691396c725f277d5e292ba67e591c6524e321
 _
 /nucampsite/features/campsites/RenderCampsite.js,d/1/d10df7560dc8c897bf64f6f4f261f994e843b07f
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 G
 nucampsite/package.json,e/4/e4926c2183ebcb261b5c8dbe4890deec97724f90
 I

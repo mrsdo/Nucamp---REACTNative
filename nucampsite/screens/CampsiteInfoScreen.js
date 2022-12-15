@@ -1,27 +1,13 @@
-/**
- * Campsite Information Screen
- */
 import { useState } from 'react';
-import { FlatList, StyleSheet, Text, View} from 'react-native';
-import { COMMENTS } from '../shared/comments';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import RenderCampsite from '../features/campsites/RenderCampsite';
 
-/**
- *
- * @constructor Campsite Information
-// Set up the function component as an arrow function set equal to a const named CampsiteInfoScreen, passing one parameter of props to the arrow function.
- */
 const CampsiteInfoScreen = ({ route }) => {
     const { campsite } = route.params;
+    const comments = useSelector((state) => state.comments);
 
-    //Create a state variable called comments and a setting function called setComments with the useState hook, passing the COMMENTS array as the initial value for the state variable.
-    const [comments, setComments] = useState(COMMENTS);
     const [favorite, setFavorite] = useState(false);
-    /**
-     *
-     * @param {string} id
-     * @returns {void}
-     */
 
     const renderCommentItem = ({ item }) => {
         return (
@@ -37,7 +23,7 @@ const CampsiteInfoScreen = ({ route }) => {
 
     return (
         <FlatList
-            data={comments.filter(
+            data={comments.commentsArray.filter(
                 (comment) => comment.campsiteId === campsite.id
             )}
             renderItem={renderCommentItem}

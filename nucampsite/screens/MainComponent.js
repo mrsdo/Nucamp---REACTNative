@@ -1,11 +1,3 @@
-/**
- * MainComponent.js
- */
-
-
-
-
-// Functional Imports: Similar to a router via navigation drawer
 import { Image, Platform, StyleSheet, Text, View } from 'react-native';
 import Constants from 'expo-constants';
 import CampsiteInfoScreen from './CampsiteInfoScreen';
@@ -21,8 +13,6 @@ import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
 import { Icon } from 'react-native-elements';
 import logo from '../assets/images/logo.png';
-
-// Redux Imports
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchPartners } from '../features/partners/partnersSlice';
@@ -42,7 +32,7 @@ const HomeNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name=' '
+                name='Home'
                 component={HomeScreen}
                 options={({ navigation }) => ({
                     title: 'Welcome',
@@ -65,7 +55,7 @@ const AboutNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='About'
+                name='Our Story'
                 component={AboutScreen}
                 options={({ navigation }) => ({
                     headerLeft: () => (
@@ -87,7 +77,7 @@ const ContactNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Contact'
+                name='Contact Info'
                 component={ContactScreen}
                 options={({ navigation }) => ({
                     title: 'Contact Us',
@@ -116,7 +106,7 @@ const DirectoryNavigator = () => {
                 name='Directory'
                 component={DirectoryScreen}
                 options={({ navigation }) => ({
-                    title: 'Campsite Directory',
+                    title: 'Campsites',
                     headerLeft: () => (
                         <Icon
                             name='list'
@@ -153,17 +143,14 @@ const CustomDrawerContent = (props) => (
 );
 
 const Main = () => {
-    // Create a dispatch
     const dispatch = useDispatch();
 
-    // Redux with useEffect hook makes call to dispatch for the following:
     useEffect(() => {
         dispatch(fetchCampsites());
         dispatch(fetchPromotions());
         dispatch(fetchPartners());
         dispatch(fetchComments());
     }, [dispatch]);
-
 
     return (
         <View
@@ -179,7 +166,7 @@ const Main = () => {
                 drawerStyle={{ backgroundColor: '#CEC8FF' }}
             >
                 <Drawer.Screen
-                    name='Home'
+                    name='Welcome'
                     component={HomeNavigator}
                     options={{
                         title: 'Home',
