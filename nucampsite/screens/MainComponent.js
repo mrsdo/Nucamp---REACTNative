@@ -1,3 +1,11 @@
+/**
+ * MainComponent.js
+ */
+
+
+
+
+// Functional Imports: Similar to a router via navigation drawer
 import { Image, Platform, StyleSheet, Text, View } from 'react-native';
 import Constants from 'expo-constants';
 import CampsiteInfoScreen from './CampsiteInfoScreen';
@@ -13,6 +21,14 @@ import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
 import { Icon } from 'react-native-elements';
 import logo from '../assets/images/logo.png';
+
+// Redux Imports
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchPartners } from '../features/partners/partnersSlice';
+import { fetchCampsites } from '../features/campsites/campsitesSlice';
+import { fetchPromotions } from '../features/promotions/promotionsSlice';
+import { fetchComments } from '../features/comments/commentsSlice';
 
 const Drawer = createDrawerNavigator();
 
@@ -137,6 +153,18 @@ const CustomDrawerContent = (props) => (
 );
 
 const Main = () => {
+    // Create a dispatch
+    const dispatch = useDispatch();
+
+    // Redux with useEffect hook makes call to dispatch for the following:
+    useEffect(() => {
+        dispatch(fetchCampsites());
+        dispatch(fetchPromotions());
+        dispatch(fetchPartners());
+        dispatch(fetchComments());
+    }, [dispatch]);
+
+
     return (
         <View
             style={{
