@@ -103,7 +103,7 @@ const DirectoryNavigator = () => {
             screenOptions={screenOptions}
         >
             <Stack.Screen
-                name='Directory'
+                name='Campsite Directory'
                 component={DirectoryScreen}
                 options={({ navigation }) => ({
                     title: 'Campsites',
