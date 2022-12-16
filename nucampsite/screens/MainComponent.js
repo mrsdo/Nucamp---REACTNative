@@ -36,7 +36,7 @@ const HomeNavigator = () => {
                 name='Home'
                 component={HomeScreen}
                 options={({ navigation }) => ({
-                    title: 'Home',
+                    title: 'Welcome',
                     headerLeft: () => (
                         <Icon
                             name='home'
