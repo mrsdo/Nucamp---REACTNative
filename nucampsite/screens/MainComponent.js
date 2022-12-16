@@ -11,6 +11,7 @@ import {
 import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
+import ReservationScreen from './ReservationScreen';
 import { Icon } from 'react-native-elements';
 import logo from '../assets/images/logo.png';
 import { useDispatch } from 'react-redux';
@@ -35,7 +36,7 @@ const HomeNavigator = () => {
                 name='Home'
                 component={HomeScreen}
                 options={({ navigation }) => ({
-                    title: 'Welcome',
+                    title: 'Home',
                     headerLeft: () => (
                         <Icon
                             name='home'
@@ -55,7 +56,7 @@ const AboutNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Our Story'
+                name='About'
                 component={AboutScreen}
                 options={({ navigation }) => ({
                     headerLeft: () => (
@@ -77,13 +78,36 @@ const ContactNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Contact Info'
+                name='Contact'
                 component={ContactScreen}
                 options={({ navigation }) => ({
                     title: 'Contact Us',
                     headerLeft: () => (
                         <Icon
                             name='address-card'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
+        </Stack.Navigator>
+    );
+};
+
+const ReservationNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name='Reservation'
+                component={ReservationScreen}
+                options={({ navigation }) => ({
+                    title: 'Reservation Search',
+                    headerLeft: () => (
+                        <Icon
+                            name='tree'
                             type='font-awesome'
                             iconStyle={styles.stackIcon}
                             onPress={() => navigation.toggleDrawer()}
@@ -166,7 +190,7 @@ const Main = () => {
                 drawerStyle={{ backgroundColor: '#CEC8FF' }}
             >
                 <Drawer.Screen
-                    name='Welcome'
+                    name='Home'
                     component={HomeNavigator}
                     options={{
                         title: 'Home',
@@ -189,6 +213,22 @@ const Main = () => {
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='list'
+                                type='font-awesome'
+                                size={24}
+                                iconStyle={{ width: 24 }}
+                                color={color}
+                            />
+                        )
+                    }}
+                />
+                <Drawer.Screen
+                    name='ReserveCampsite'
+                    component={ReservationNavigator}
+                    options={{
+                        title: 'Reserve Campsite',
+                        drawerIcon: ({ color }) => (
+                            <Icon
+                                name='tree'
                                 type='font-awesome'
                                 size={24}
                                 iconStyle={{ width: 24 }}
