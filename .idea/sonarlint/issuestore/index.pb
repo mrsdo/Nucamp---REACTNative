@@ -13,3 +13,12 @@ K
 navigation-drawer-issues.md,d/7/d77e51cb9e99c21dae5ffe5aa9112f94ce4948db
 L
 nucampsite/package-lock.json,0/d/0df77018122eec89a8258c5d06cc0cb1caab2e5e
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+X
+(nucampsite/screens/CampsiteInfoScreen.js,3/f/3f6691396c725f277d5e292ba67e591c6524e321
+_
+/nucampsite/features/campsites/RenderCampsite.js,d/1/d10df7560dc8c897bf64f6f4f261f994e843b07f
+I
+nucampsite/redux/store.js,6/b/6b11d10e5c1633536bddc67b888eef1b2a3f59f4
