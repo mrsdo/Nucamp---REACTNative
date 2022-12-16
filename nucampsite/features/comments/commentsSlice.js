@@ -19,6 +19,7 @@ const commentsSlice = createSlice({
     name: 'comments',
     initialState: { isLoading: true, errMess: null, commentsArray: [] },
     reducers: {},
+
     extraReducers: {
         [fetchComments.pending]: (state) => {
             state.isLoading = true;
@@ -38,3 +39,5 @@ const commentsSlice = createSlice({
 });
 
 export const commentsReducer = commentsSlice.reducer;
+
+export const { addComment } = commentsSlice.actions;

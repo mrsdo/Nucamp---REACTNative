@@ -5,6 +5,7 @@ import {baseUrl} from '../../shared/baseUrl';
 const RenderCampsite = (props) => {
 
     const {campsite} = props;
+
     if (campsite) {
         return (
             <Card containerStyle={styles.cardContainer}>
@@ -36,7 +37,6 @@ const RenderCampsite = (props) => {
                         raised
                         reverse
                         onPress={() => props.onShowModal()}
-
                     />
                 </View>
 
