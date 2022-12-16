@@ -1,4 +1,4 @@
-import { Button, Modal, FlatList, StyleSheet, Text, View } from 'react-native';
+import {Button, Modal, FlatList, StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import RenderCampsite from '../features/campsites/RenderCampsite';
 import { toggleFavorite } from '../features/favorites/favoritesSlice';
@@ -10,11 +10,11 @@ const CampsiteInfoScreen = ({ route }) => {
     const favorites = useSelector((state) => state.favorites);
     const dispatch = useDispatch();
 
-    /*
-    * create a local state variable called showModal and a setting function
-    * setShowModal with the useState hook passing false as the initial value.
-    */
-    const [showModal, setShowModal] = useState(false);
+
+
+
+        // create a local state variable called showModal
+        const [showModal, setShowModal] = useState(false);
 
 
 
@@ -47,15 +47,34 @@ const CampsiteInfoScreen = ({ route }) => {
                         campsite={campsite}
                         isFavorite={favorites.includes(campsite.id)}
                         markFavorite={() => dispatch(toggleFavorite(campsite.id))}
+                        onShowModal={() => setShowModal(!showModal)}
                     />
                     <Text style={styles.commentsTitle}>Comments</Text>
                 </>
             }
         />
+
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#ecf0f1',
+        marginTop: 30,
+    },
+    modal: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#00ff00',
+        padding: 100,
+    },
+    text: {
+        color: '#3f2949',
+        marginTop: 10,
+    },
     commentsTitle: {
         textAlign: 'center',
         backgroundColor: '#fff',

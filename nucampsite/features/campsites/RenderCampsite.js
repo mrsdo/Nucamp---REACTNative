@@ -1,10 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import {Card, Icon} from 'react-native-elements';
 import {baseUrl} from '../../shared/baseUrl';
-import {useState} from "react";
 
 const RenderCampsite = (props) => {
-    const [showModal, setShowModal] = useState(false);
 
     const {campsite} = props;
     if (campsite) {
