@@ -193,7 +193,7 @@ const Main = () => {
                     name='Home'
                     component={HomeNavigator}
                     options={{
-                        title: 'Home',
+                        title: 'Welcome',
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='home'
@@ -241,7 +241,7 @@ const Main = () => {
                     name='About'
                     component={AboutNavigator}
                     options={{
-                        title: 'About',
+                        title: 'Nucamp Campsites',
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='info-circle'
