@@ -1,52 +1,51 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { Card, Icon } from 'react-native-elements';
-import { baseUrl } from '../../shared/baseUrl';
+import {StyleSheet, Text, View} from 'react-native';
+import {Card, Icon} from 'react-native-elements';
+import {baseUrl} from '../../shared/baseUrl';
 import {useState} from "react";
 
 const RenderCampsite = (props) => {
     const [showModal, setShowModal] = useState(false);
 
-    const { campsite } = props;
+    const {campsite} = props;
     if (campsite) {
         return (
             <Card containerStyle={styles.cardContainer}>
-                <Card.Image source={{ uri: baseUrl + campsite.image }}>
-                    <View style={{ justifyContent: 'center', flex: 1 }}>
+                <Card.Image source={{uri: baseUrl + campsite.image}}>
+                    <View style={{justifyContent: 'center', flex: 1}}>
                         <Text style={styles.cardText}>
                             {campsite.name}
                         </Text>
                     </View>
                 </Card.Image>
-                <Text style={{ margin: 20 }}>{campsite.description}</Text>
+                <Text style={{margin: 20}}>{campsite.description}</Text>
                 <View style={styles.cardRow}>
-                <Icon
-                    name={props.isFavorite ? 'heart' : 'heart-o'}
-                    type='font-awesome'
-                    color='#f50'
-                    raised
-                    reverse
-                    onPress={() =>
-                        props.isFavorite
-                            ? console.log('Already set as a favorite')
-                            : props.markFavorite()
-                    }
-                />
-                </View>
-                <View style={styles.cardRow}>
-                <Icon
-                    onPress={() => props.onShowModal()}
-                    name='pencil'
-                    type='font-awesome'
-                    color='#5637DD'
-                    raised
-                    reverse
+                    <Icon
+                        name={props.isFavorite ? 'heart' : 'heart-o'}
+                        type='font-awesome'
+                        color='#f50'
+                        raised
+                        reverse
+                        onPress={() =>
+                            props.isFavorite
+                                ? console.log('Already set as a favorite')
+                                : props.markFavorite()
+                        }
+                    />
+                    <Icon
+                        name='pencil'
+                        type='font-awesome'
+                        color='#5637DD'
+                        raised
+                        reverse
+                        onPress={() => props.onShowModal()}
 
-                />
+                    />
                 </View>
+
             </Card>
         );
     }
-    return <View />;
+    return <View/>;
 };
 
 const styles = StyleSheet.create({
@@ -56,11 +55,11 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     cardRow: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    flexDirection: 'row',
-    margin: 20
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        flexDirection: 'row',
+        margin: 20
     },
     cardText: {
         textShadowColor: 'rgba(0, 0, 0, 1)',
