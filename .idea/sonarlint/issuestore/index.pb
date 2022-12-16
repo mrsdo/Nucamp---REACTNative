@@ -16,10 +16,6 @@ L
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-X
-(nucampsite/screens/CampsiteInfoScreen.js,3/f/3f6691396c725f277d5e292ba67e591c6524e321
-_
-/nucampsite/features/campsites/RenderCampsite.js,d/1/d10df7560dc8c897bf64f6f4f261f994e843b07f
 I
 nucampsite/redux/store.js,6/b/6b11d10e5c1633536bddc67b888eef1b2a3f59f4
 A
@@ -36,5 +32,3 @@ Y
 )nucampsite/components/LoadingComponent.js,3/d/3dbf2b8352c4c18954318e9605ba0b829a6cce62
 G
 nucampsite/package.json,e/4/e4926c2183ebcb261b5c8dbe4890deec97724f90
-W
-'nucampsite/screens/ReservationScreen.js,5/3/536228c8e7b9cccdced36623bc84093b35e1a0d0

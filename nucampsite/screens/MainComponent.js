@@ -33,7 +33,7 @@ const HomeNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Home'
+                name='Nucamp Campsites'
                 component={HomeScreen}
                 options={({ navigation }) => ({
                     title: 'Welcome',
@@ -193,7 +193,7 @@ const Main = () => {
                     name='Home'
                     component={HomeNavigator}
                     options={{
-                        title: 'Welcome',
+                        title: 'Nucamp Campsites',
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='home'

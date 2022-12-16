@@ -1,13 +1,22 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { Button, Modal, FlatList, StyleSheet, Text, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import RenderCampsite from '../features/campsites/RenderCampsite';
 import { toggleFavorite } from '../features/favorites/favoritesSlice';
+import { useState } from 'react';
 
 const CampsiteInfoScreen = ({ route }) => {
     const { campsite } = route.params;
     const comments = useSelector((state) => state.comments);
     const favorites = useSelector((state) => state.favorites);
     const dispatch = useDispatch();
+
+    /*
+    * create a local state variable called showModal and a setting function
+    * setShowModal with the useState hook passing false as the initial value.
+    */
+    const [showModal, setShowModal] = useState(false);
+
+
 
     const renderCommentItem = ({ item }) => {
         return (
