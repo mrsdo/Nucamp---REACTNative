@@ -6,6 +6,11 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/code-challenges" />
+      <excludeFolder url="file://$MODULE_DIR$/WEEK-01" />
+      <excludeFolder url="file://$MODULE_DIR$/WEEK-02" />
+      <excludeFolder url="file://$MODULE_DIR$/WEEK-03" />
+      <excludeFolder url="file://$MODULE_DIR$/WEEK-04" />
+      <excludeFolder url="file://$MODULE_DIR$/WEEK-05" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

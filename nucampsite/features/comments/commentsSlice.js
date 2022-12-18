@@ -18,7 +18,11 @@ export const fetchComments = createAsyncThunk(
 const commentsSlice = createSlice({
     name: 'comments',
     initialState: { isLoading: true, errMess: null, commentsArray: [] },
-    reducers: {},
+    reducers: {
+        addComment: (state, action) => {
+            state.commentsArray.push(action.payload);
+        }
+    },
 
     extraReducers: {
         [fetchComments.pending]: (state) => {
