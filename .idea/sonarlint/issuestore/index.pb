@@ -18,8 +18,6 @@ I
 nucampsite/redux/store.js,6/b/6b11d10e5c1633536bddc67b888eef1b2a3f59f4
 A
 nucampsite/App.js,e/0/e0e86d7b6990a699236ece4a7e459ac6df9eb3ed
-P
- nucampsite/screens/HomeScreen.js,e/7/e7dc58e38b86ff7dbe33ef11870934d01565dd29
 Q
 !nucampsite/screens/AboutScreen.js,d/5/d598c869c368f6ed6aaac735a6192dd4a46df69e
 Y
@@ -34,5 +32,3 @@ X
 (nucampsite/screens/CampsiteInfoScreen.js,3/f/3f6691396c725f277d5e292ba67e591c6524e321
 S
 #nucampsite/screens/MainComponent.js,6/a/6a9807ee5602a9a7fcfb47d6ff5895650d414617
-U
-%nucampsite/screens/FavoritesScreen.js,e/f/ef6c8299efc8d1769f498b6f9600dfef15dcf95d

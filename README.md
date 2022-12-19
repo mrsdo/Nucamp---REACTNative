@@ -128,7 +128,18 @@ json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000
 
 ## Week-03
 
+> NOTE about json-server
+When moving between computers with different IP addresses, update the base URL and add the IP address to the json-server
+> json-server -H 172.16.1.5 --watch db.json
+> export const baseUrl = 'http://172.16.1.5:3000/';
 
+ - Week-03_1 Favorites completed
+ - Week-03_2 Adding Delete Swip for Favorites completed
+ - Week-03_3 Adding Alerts completed
+   - Learn to use React Native's built-in Alert API to show an alert dialog with configurable buttons
+   - Take an action upon user confirmation
+ - Week-03_4 Adding Animations
+   - Adding the React native animated API
 
 
 ## Week-04
