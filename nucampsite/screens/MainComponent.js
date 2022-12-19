@@ -20,6 +20,7 @@ import { fetchPartners } from '../features/partners/partnersSlice';
 import { fetchCampsites } from '../features/campsites/campsitesSlice';
 import { fetchPromotions } from '../features/promotions/promotionsSlice';
 import { fetchComments } from '../features/comments/commentsSlice';
+import FavoritesScreen from './FavoritesScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -33,10 +34,10 @@ const HomeNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Home'
+                name='Nucamp Campsites'
                 component={HomeScreen}
                 options={({ navigation }) => ({
-                    title: 'Home',
+                    title: 'Welcome',
                     headerLeft: () => (
                         <Icon
                             name='home'
@@ -108,6 +109,29 @@ const ReservationNavigator = () => {
                     headerLeft: () => (
                         <Icon
                             name='tree'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
+        </Stack.Navigator>
+    );
+};
+
+const FavoritesNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name='Favorites'
+                component={FavoritesScreen}
+                options={({ navigation }) => ({
+                    title: 'My Favorites',
+                    headerLeft: () => (
+                        <Icon
+                            name='heart'
                             type='font-awesome'
                             iconStyle={styles.stackIcon}
                             onPress={() => navigation.toggleDrawer()}
@@ -193,7 +217,7 @@ const Main = () => {
                     name='Home'
                     component={HomeNavigator}
                     options={{
-                        title: 'Home',
+                        title: 'Nucamp',
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='home'
@@ -238,7 +262,23 @@ const Main = () => {
                     }}
                 />
                 <Drawer.Screen
-                    name='About'
+                    name='Favorites'
+                    component={FavoritesNavigator}
+                    options={{
+                        title: 'My Favorites',
+                        drawerIcon: ({ color }) => (
+                            <Icon
+                                name='heart'
+                                type='font-awesome'
+                                size={24}
+                                iconStyle={{ width: 24 }}
+                                color={color}
+                            />
+                        )
+                    }}
+                />
+                <Drawer.Screen
+                    name='Nucamp Campsites'
                     component={AboutNavigator}
                     options={{
                         title: 'About',
