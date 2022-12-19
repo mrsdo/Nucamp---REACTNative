@@ -82,7 +82,7 @@ const ContactNavigator = () => {
                 name='Contact'
                 component={ContactScreen}
                 options={({ navigation }) => ({
-                    title: 'Contact Us',
+                    title: 'Contact Information',
                     headerLeft: () => (
                         <Icon
                             name='address-card'
@@ -265,7 +265,7 @@ const Main = () => {
                     name='Favorites'
                     component={FavoritesNavigator}
                     options={{
-                        title: 'My Favorites',
+                        title: 'Favorites',
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='heart'

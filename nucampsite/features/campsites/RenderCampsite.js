@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import {Card, Icon} from 'react-native-elements';
 import {baseUrl} from '../../shared/baseUrl';
+import * as Animatable from 'react-native-animatable'
 
 const RenderCampsite = (props) => {
 
@@ -8,6 +9,16 @@ const RenderCampsite = (props) => {
 
     if (campsite) {
         return (
+            // In the return statement inside the if block, wrap the Card component with an Animatable.View component with the following props:
+            // animation equal to the string 'fadeInDownBig'.
+            // duration equal to the number 2000.
+            // delay equal to the number 1000.
+            <Animatable.View
+                animation='fadeInDownBig'
+                duration={props.duration}
+                delay={props.delay}
+                style={props.style}
+            >
             <Card containerStyle={styles.cardContainer}>
                 <Card.Image source={{uri: baseUrl + campsite.image}}>
                     <View style={{justifyContent: 'center', flex: 1}}>
@@ -39,8 +50,8 @@ const RenderCampsite = (props) => {
                         onPress={() => props.onShowModal()}
                     />
                 </View>
-
             </Card>
+            </Animatable.View>
         );
     }
     return <View/>;
@@ -50,14 +61,14 @@ const styles = StyleSheet.create({
     cardContainer: {
         padding: 0,
         margin: 0,
-        marginBottom: 20
+        marginBottom: 10
     },
     cardRow: {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
         flexDirection: 'row',
-        margin: 20
+        margin: 5
     },
     cardText: {
         textShadowColor: 'rgba(0, 0, 0, 1)',

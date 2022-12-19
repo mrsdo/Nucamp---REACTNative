@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Button, FlatList, Modal, StyleSheet, Text, View } from 'react-native';
-import { Input, Rating } from 'react-native-elements';
+import {Avatar, Image, Input, Rating} from 'react-native-elements';
 import { useSelector, useDispatch } from 'react-redux';
 import RenderCampsite from '../features/campsites/RenderCampsite';
 import { toggleFavorite } from '../features/favorites/favoritesSlice';
 import { postComment } from '../features/comments/commentsSlice';
+import * as Animatable from 'react-native-animatable'
+import {baseUrl} from "../shared/baseUrl";
 
 
 const CampsiteInfoScreen = ({ route }) => {
@@ -52,7 +54,11 @@ const CampsiteInfoScreen = ({ route }) => {
     };
 
     return (
-        <View>
+        // In the return statement replace the React Fragment with an Animatable.View component with the following props:
+        // animation equal to the string 'fadeInUp'.
+        // duration equal to the number 2000.
+        // delay equal to the number 1000.
+        <Animatable.View animation='fadeInUp' duration={2000} delay={1000}>
             <FlatList
                 data={comments.commentsArray.filter(
                     (comment) => comment.campsiteId === campsite.id
@@ -60,8 +66,8 @@ const CampsiteInfoScreen = ({ route }) => {
                 renderItem={renderCommentItem}
                 keyExtractor={(item) => item.id.toString()}
                 contentContainerStyle={{
-                    marginHorizontal: 20,
-                    paddingVertical: 20
+                    marginHorizontal: 10,
+                    paddingVertical: 10
                 }}
                 ListHeaderComponent={
                     <>
@@ -72,6 +78,7 @@ const CampsiteInfoScreen = ({ route }) => {
                                 dispatch(toggleFavorite(campsite.id))
                             }
                             onShowModal={() => setShowModal(!showModal)}
+
                         />
                         <Text style={styles.commentsTitle}>Comments</Text>
                     </>
@@ -127,11 +134,17 @@ const CampsiteInfoScreen = ({ route }) => {
                     </View>
                 </View>
             </Modal>
-        </View>
+        </Animatable.View>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
     commentsTitle: {
         textAlign: 'center',
         backgroundColor: '#fff',
@@ -149,7 +162,26 @@ const styles = StyleSheet.create({
     modal: {
         justifyContent: 'center',
         margin: 20
-    }
+    },
+    title: {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#fff',
+        padding: 10,
+        paddingTop: 10,
+        backgroundColor: '#333',
+    },
+    subtitle: {
+        fontSize: 15,
+        padding: 10,
+        paddingTop: 10,
+    },
+    stretch: {
+        width: 'auto',
+        height: 200,
+        resizeMode: 'stretch',
+    },
 });
 
 export default CampsiteInfoScreen;

@@ -3,13 +3,13 @@
  * ContactScreen
  */
 import React from'react';
-import { useState } from 'react';
 import {
    ScrollView,
     StyleSheet,
-    View
+
 } from 'react-native';
 import { Card, Text } from '@rneui/themed';
+import * as Animatable from 'react-native-animatable'
 
 // Styles
 
@@ -19,9 +19,14 @@ const ContactScreen = () => {
     return (
 
         <ScrollView>
-            <View style={styles.container}>
+
+                <Animatable.View
+                    animation='fadeInDown'
+                    duration={2000}
+                    delay={1000}
+                >
                 <Card wrapperStyle={{margin: 20}}>
-                    <Card.Title>Contact Information</Card.Title>
+                    <Card.Title>Address</Card.Title>
                         <Card.Divider />
                     <Text style={styles.fonts}>
                         1 Nucamp Way
@@ -34,8 +39,9 @@ const ContactScreen = () => {
                     </Text>
 
                 </Card>
+                </Animatable.View>
 
-            </View>
+
 
         </ScrollView>
 
