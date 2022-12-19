@@ -1,6 +1,4 @@
 
-7
-LICENSE,0/3/0398ccd0f49298b10a3d76a47800d2ebecd49859
 i
 9code-challenges/react-native-flatlist-listitem-fix/App.js,3/f/3fe4ff22c3f4fd1cace3a3531bb8b7512bcc642b
 r
@@ -24,10 +22,6 @@ P
  nucampsite/screens/HomeScreen.js,e/7/e7dc58e38b86ff7dbe33ef11870934d01565dd29
 Q
 !nucampsite/screens/AboutScreen.js,d/5/d598c869c368f6ed6aaac735a6192dd4a46df69e
-L
-nucampsite/shared/baseUrl.js,7/7/77f1a30e2d8ab47cbba16d8d00d6b1e0b4c4cb75
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Y
 )nucampsite/components/LoadingComponent.js,3/d/3dbf2b8352c4c18954318e9605ba0b829a6cce62
 _
@@ -38,10 +32,6 @@ W
 'nucampsite/screens/ReservationScreen.js,5/3/536228c8e7b9cccdced36623bc84093b35e1a0d0
 X
 (nucampsite/screens/CampsiteInfoScreen.js,3/f/3f6691396c725f277d5e292ba67e591c6524e321
-]
--nucampsite/features/comments/commentsSlice.js,c/6/c6afa0d582b48f1647c533d9a83eb7071ee7dcf8
-G
-nucampsite/package.json,e/4/e4926c2183ebcb261b5c8dbe4890deec97724f90
 S
 #nucampsite/screens/MainComponent.js,6/a/6a9807ee5602a9a7fcfb47d6ff5895650d414617
 U

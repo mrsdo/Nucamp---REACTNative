@@ -1,3 +1,3 @@
-export const baseUrl = 'http://192.168.16.24:3001/';
+export const baseUrl = 'http://172.16.1.5:3000/';
 // Convert this to dynamic URL
 
