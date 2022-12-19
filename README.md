@@ -138,6 +138,8 @@ When moving between computers with different IP addresses, update the base URL a
  - Week-03_3 Adding Alerts completed
    - Learn to use React Native's built-in Alert API to show an alert dialog with configurable buttons
    - Take an action upon user confirmation
+ - Week-03_4 Adding Animations
+   - Adding the React native animated API
 
 
 ## Week-04
