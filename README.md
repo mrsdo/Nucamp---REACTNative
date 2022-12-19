@@ -133,13 +133,24 @@ When moving between computers with different IP addresses, update the base URL a
 > json-server -H 172.16.1.5 --watch db.json
 > export const baseUrl = 'http://172.16.1.5:3000/';
 
- - Week-03_1 Favorites completed
- - Week-03_2 Adding Delete Swip for Favorites completed
- - Week-03_3 Adding Alerts completed
-   - Learn to use React Native's built-in Alert API to show an alert dialog with configurable buttons
-   - Take an action upon user confirmation
- - Week-03_4 Adding Animations
-   - Adding the React native animated API
+ [x] Week-03_1 Favorites completed
+
+ [x] Week-03_2 Adding Delete Swip for Favorites completed
+
+ [x] Week-03_3 Adding Alerts completed
+    
+    - Learn to use React Native's built-in Alert API to show an alert dialog with configurable buttons
+    - Take an action upon user confirmation
+
+ [x] Week-03_4 Adding Animations 
+
+    - Adding the React native animated API
+
+ [ ] Week-03_5 Adding React Native Animatable
+
+    - Use react-native-animatable, an Animated library, with pre-packaged animations to easily apply to components
+    - Requires: npx expo install react-native-animatable
+
 
 
 ## Week-04
@@ -155,9 +166,14 @@ When moving between computers with different IP addresses, update the base URL a
 ## NOTES FROM REACT Course
 
 
+### React Native Safe Area Context Issue
+> I have to remove this before installing new packages then reinstall afterwards 
 
-**NOTE:**
-TODO: Try typing s + to see what this does.
+### json-server -H [my.ip.address] --watch db.json 
+> After moving to new computer I now need to use this (maps to baseURL) otherwise json server won't start
+
+
+**TODO**: Try typing s + to see what this does.
 
 >  Type s + enter at any time to create a snapshot of the database
 
@@ -168,3 +184,4 @@ Terminal: npm i -g npm@9.1.3
 Not sure why this occurred but now npm start has no errors
 > From terminal:
 > - watchman watch-del '/Users/mach3-dtserv/Nucamp---REACTNative.nosync' ; watchman watch-project '/Users/mach3-dtserv/Nucamp---REACTNative.nosync'
+
