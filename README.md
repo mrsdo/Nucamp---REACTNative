@@ -135,6 +135,9 @@ When moving between computers with different IP addresses, update the base URL a
 
  - Week-03_1 Favorites completed
  - Week-03_2 Adding Delete Swip for Favorites completed
+ - Week-03_3 Adding Alerts completed
+   - Learn to use React Native's built-in Alert API to show an alert dialog with configurable buttons
+   - Take an action upon user confirmation
 
 
 ## Week-04

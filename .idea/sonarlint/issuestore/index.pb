@@ -34,5 +34,3 @@ X
 (nucampsite/screens/CampsiteInfoScreen.js,3/f/3f6691396c725f277d5e292ba67e591c6524e321
 S
 #nucampsite/screens/MainComponent.js,6/a/6a9807ee5602a9a7fcfb47d6ff5895650d414617
-U
-%nucampsite/screens/FavoritesScreen.js,e/f/ef6c8299efc8d1769f498b6f9600dfef15dcf95d
