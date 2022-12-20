@@ -125,7 +125,7 @@ const FavoritesNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Favorites'
+                name='Stack Favorites'
                 component={FavoritesScreen}
                 options={({ navigation }) => ({
                     title: 'My Favorites',
