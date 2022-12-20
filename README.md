@@ -151,9 +151,19 @@ When moving between computers with different IP addresses, update the base URL a
     - Use react-native-animatable, an Animated library, with pre-packaged animations to easily apply to components
     - Requires: npx expo install react-native-animatable
 
- [ ] Week-03_6 Adding Gestures with React Native Built-In PAN gesture
+ [x] Week-03_6 Adding Gestures with React Native Built-In PAN gesture
 
     - Use animations to give visual feedback to users in response to a gesture
+
+[ ] Week-03_7 Adding Redux Persist Store - Reloading when it's needed
+    
+    - Requires: npx expo install redux-persist @react-native-async-storage/async-storage
+    - Requires: npx expo install redux-persist @react-native-async-storage/async-storage 
+
+
+![IOS Screen](dev-assets/IMG_1028.jpg)
+
+    - Saving user data to persistent store (Client Side/Device Storage)
 
 
 ## Week-04
@@ -168,6 +178,8 @@ When moving between computers with different IP addresses, update the base URL a
 ---
 ## NOTES FROM REACT Course
 
+### How to save console output?
+**TODO**: [Configure console output to file path](https://blog.logrocket.com/reviewing-react-native-console-logs-best-practices/)
 
 ### React Native Safe Area Context Issue
 > I have to remove this before installing new packages then reinstall afterwards 
