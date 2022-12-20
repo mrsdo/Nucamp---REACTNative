@@ -150,7 +150,10 @@ When moving between computers with different IP addresses, update the base URL a
 
     - Use react-native-animatable, an Animated library, with pre-packaged animations to easily apply to components
     - Requires: npx expo install react-native-animatable
+
  [ ] Week-03_6 Adding Gestures with React Native Built-In PAN gesture
+
+    - Use animations to give visual feedback to users in response to a gesture
 
 
 ## Week-04
