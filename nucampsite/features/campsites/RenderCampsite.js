@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {PanResponder,  Alert,  StyleSheet, Text, View} from 'react-native';
 import {Card, Icon} from 'react-native-elements';
 import {baseUrl} from '../../shared/baseUrl';
 import * as Animatable from 'react-native-animatable'
@@ -7,6 +7,41 @@ const RenderCampsite = (props) => {
 
     const {campsite} = props;
 
+    // add a constant called isLeftSwipe equal to an arrow function that destructures dx in the parameter list and returns the boolean expression dx < -200.
+    const isLeftSwipe = ({ dx }) => dx < -200;
+
+    // create a constant called panResponder equal to a call to PanResponder.create() passing an object as the argument with the following properties:
+    // onStartShouldSetPanResponder equal to an arrow function that returns true.
+    // onPanResponderEnd equal to an arrow function with two parameters of e as the first and gestureState as the second.
+    const panResponder = PanResponder.create({
+        onStartShouldSetPanResponder: () => true,
+        onPanResponderEnd: (e, gestureState) => {
+            console.log('pan responder end', gestureState);
+            if (isLeftSwipe(gestureState)) {
+                Alert.alert(
+                    'Add Favorite',
+                    'Are you sure you wish to add ' +
+                    campsite.name +
+                    ' to favorites?',
+                    [
+                        {
+                            text: 'Cancel',
+                            style: 'cancel',
+                            onPress: () => console.log('Cancel Pressed')
+                        },
+                        {
+                            text: 'OK',
+                            onPress: () =>
+                                props.isFavorite
+                                    ? console.log('Already set as a favorite')
+                                    : props.markFavorite()
+                        }
+                    ],
+                    { cancelable: false }
+                );
+            }
+        }
+    });
     if (campsite) {
         return (
             // In the return statement inside the if block, wrap the Card component with an Animatable.View component with the following props:
@@ -15,9 +50,9 @@ const RenderCampsite = (props) => {
             // delay equal to the number 1000.
             <Animatable.View
                 animation='fadeInDownBig'
-                duration={props.duration}
-                delay={props.delay}
-                style={props.style}
+                duration={2000}
+                delay={1000}
+                {...panResponder.panHandlers}
             >
             <Card containerStyle={styles.cardContainer}>
                 <Card.Image source={{uri: baseUrl + campsite.image}}>

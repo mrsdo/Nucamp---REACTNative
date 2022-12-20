@@ -265,7 +265,7 @@ const Main = () => {
                     name='Favorites'
                     component={FavoritesNavigator}
                     options={{
-                        title: 'Favorites',
+                        title: 'My Favorites',
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='heart'
