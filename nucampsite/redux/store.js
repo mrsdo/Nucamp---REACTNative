@@ -1,3 +1,7 @@
+/*
+*  store.js
+ * M.Dolce 12.20.2022, http://micropython.org/
+ */
 import { configureStore } from '@reduxjs/toolkit';
 import { campsitesReducer } from '../features/campsites/campsitesSlice';
 import { commentsReducer } from '../features/comments/commentsSlice';

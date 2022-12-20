@@ -1,3 +1,7 @@
+/*
+ * App.js
+ * M.DOLCE 12.20.2022
+ */
 import Main from './screens/MainComponent';
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
