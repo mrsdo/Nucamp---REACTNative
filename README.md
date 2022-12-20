@@ -146,11 +146,11 @@ When moving between computers with different IP addresses, update the base URL a
 
     - Adding the React native animated API
 
- [ ] Week-03_5 Adding React Native Animatable
+ [x] Week-03_5 Adding React Native Animatable
 
     - Use react-native-animatable, an Animated library, with pre-packaged animations to easily apply to components
     - Requires: npx expo install react-native-animatable
-
+ [ ] Week-03_6 Adding Gestures with React Native Built-In PAN gesture
 
 
 ## Week-04
