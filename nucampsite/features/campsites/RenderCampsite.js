@@ -17,6 +17,9 @@ const RenderCampsite = (props) => {
 
     const isLeftSwipe = ({ dx }) => dx < -200;
 
+    // Implement a new function inside the RenderCampsite component named isRightSwipe
+    const isRightSwipe = ({ dx }) => dx > 200;
+
 /*  create a constant called panResponder equal to a call to PanResponder.create() passing an object as the
 *   argument with the following properties:
 *   onStartShouldSetPanResponder equal to an arrow function that returns true.
@@ -61,6 +64,12 @@ const RenderCampsite = (props) => {
                     { cancelable: false }
                 );
             }
+            // If the check for isLeftSwipe returns false, then add an else if statement
+            // that will check if the isRightSwipe function returns true, passing it the
+            // argument of gestureState
+                    else if (isRightSwipe(gestureState)) {
+                        props.onShowModal();
+                    }
         }
     });
     if (campsite) {

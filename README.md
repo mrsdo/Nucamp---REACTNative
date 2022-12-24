@@ -155,10 +155,17 @@ When moving between computers with different IP addresses, update the base URL a
 
     - Use animations to give visual feedback to users in response to a gesture
 
-[ ] Week-03_7 Adding Redux Persist Store - Reloading when it's needed
+ [x] Week-03_7 Adding Redux Persist Store - Reloading when it's needed
     
     - Requires: npx expo install redux-persist @react-native-async-storage/async-storage
     - Requires: npx expo install redux-persist @react-native-async-storage/async-storage 
+
+ [ ] Week-03_8 Workshop Assignment
+
+    - Add a zoomIn animation from Animatable
+    - Remove the Modal and add an Alert
+    - Open the campsite comment form modal in response to a gesture
+
 
 
 ![IOS Screen](dev-assets/IMG_1028.jpg)
