@@ -30,12 +30,12 @@ const ReservationScreen = () => {
     };
 
     const handleReservation = () => {
+        const confirmationScreen = `Number of Campers:  ${campers}`
+
 
         Alert.alert(
             'Begin Search?',
-            `Number of Campers: ${campers}
-                            \nHike-In? ${hikeIn}
-                            \nDate: ${date.toLocaleDateString('en-US')}`
+            confirmationScreen,
 
             [
                 {
@@ -49,6 +49,7 @@ const ReservationScreen = () => {
                 {
                     text: 'OK',
                     onPress: () => {
+
                         resetForm();
                     }
                 }
