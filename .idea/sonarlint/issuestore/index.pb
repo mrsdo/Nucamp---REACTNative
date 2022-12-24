@@ -30,21 +30,11 @@ Q
 !nucampsite/screens/AboutScreen.js,d/5/d598c869c368f6ed6aaac735a6192dd4a46df69e
 S
 #nucampsite/screens/ContactScreen.js,5/0/509284b0f4ba95523a88bc5f1afd49009e4190ba
-X
-(nucampsite/screens/CampsiteInfoScreen.js,3/f/3f6691396c725f277d5e292ba67e591c6524e321
-N
-nucampsite/shared/campsites.js,a/f/af87e0c090e02b06c1775cb280e624ef9490d322
 U
 %nucampsite/screens/FavoritesScreen.js,e/f/ef6c8299efc8d1769f498b6f9600dfef15dcf95d
 U
 %nucampsite/screens/DirectoryScreen.js,0/9/09018fb7f93fa2acb5c644b3318a0cad7bd96639
-_
-/nucampsite/features/campsites/RenderCampsite.js,d/1/d10df7560dc8c897bf64f6f4f261f994e843b07f
-G
-nucampsite/package.json,e/4/e4926c2183ebcb261b5c8dbe4890deec97724f90
-S
-#nucampsite/screens/MainComponent.js,6/a/6a9807ee5602a9a7fcfb47d6ff5895650d414617
 I
 nucampsite/redux/store.js,6/b/6b11d10e5c1633536bddc67b888eef1b2a3f59f4
-A
-nucampsite/App.js,e/0/e0e86d7b6990a699236ece4a7e459ac6df9eb3ed
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

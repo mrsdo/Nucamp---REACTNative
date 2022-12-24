@@ -45,8 +45,7 @@ const ReservationScreen = () => {
 
     const zoomAnimation = Animated.timing(zoomValue, {
         toValue: 1,
-        duration: 2000,
-        delay: 1000,
+        duration: 1500,
         useNativeDriver: true
     });
     useEffect(() => {
