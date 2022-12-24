@@ -33,6 +33,9 @@ const ReservationScreen = () => {
 
         Alert.alert(
             'Begin Search?',
+            `Number of Campers: ${campers}
+                            \nHike-In? ${hikeIn}
+                            \nDate: ${date.toLocaleDateString('en-US')}`
 
             [
                 {
