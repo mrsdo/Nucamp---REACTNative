@@ -30,12 +30,14 @@ const ReservationScreen = () => {
     };
 
     const handleReservation = () => {
-        const confirmationScreen = `Number of Campers:  ${campers}`
+        const numCampers = `Number of Campers:  ${campers}`
+        const hikedIn = `Hike-In?:  ${hikeIn}`
+        const resDate = `Date:  ${date.toLocaleDateString("en-US")}`
 
 
         Alert.alert(
             'Begin Search?',
-            confirmationScreen,
+            numCampers + "\n" + hikedIn + "\n" + resDate,
 
             [
                 {
