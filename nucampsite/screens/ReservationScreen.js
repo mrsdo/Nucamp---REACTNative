@@ -31,7 +31,7 @@ const ReservationScreen = () => {
 
     const handleReservation = () => {
         const numCampers = `Number of Campers:  ${campers}`
-        const hikedIn = `Hike-In?:  ${hikeIn}`
+        const hikedIn = `Hike-In?  ${hikeIn}`
         const resDate = `Date:  ${date.toLocaleDateString("en-US")}`
 
 
