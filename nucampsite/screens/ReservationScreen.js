@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import {
     Text,
     View,
@@ -6,12 +6,12 @@ import {
     StyleSheet,
     Switch,
     Button,
-    Modal,
-    Animated, Alert
+    Alert, Platform
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import * as Animatable from 'react-native-animatable';
+import * as Notifications from 'expo-notifications';
 
 
 
@@ -21,7 +21,7 @@ const ReservationScreen = () => {
     const [hikeIn, setHikeIn] = useState(false);
     const [date, setDate] = useState(new Date());
     const [showCalendar, setShowCalendar] = useState(false);
-    const [showModal, setShowModal] = useState(false);
+
 
     const onDateChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
@@ -51,7 +51,11 @@ const ReservationScreen = () => {
                 {
                     text: 'OK',
                     onPress: () => {
-
+                        presentLocalNotification(
+                            date.toLocaleDateString('en-US')
+                        ).then(r => {
+                            console.log(r);
+                        });
                         resetForm();
                     }
                 }
@@ -69,6 +73,39 @@ const ReservationScreen = () => {
         setDate(new Date());
         setShowCalendar(false);
     };
+
+    // Below the resetForm function create a new async function called presentLocalNotification with a parameter called reservationDate.
+    const presentLocalNotification = async (reservationDate) => {
+        const sendNotification = () => {
+            Notifications.setNotificationHandler({
+                handleNotification: async () => ({
+                    shouldShowAlert: true,
+                    shouldPlaySound: true,
+                    shouldSetBadge: true
+                })
+            });
+
+            Notifications.scheduleNotificationAsync({
+                content: {
+                    title: 'Your Campsite Reservation Search',
+                    body: `Search for ${reservationDate} requested for ${campers}`,
+                },
+                trigger: null
+            });
+            console.log('notification scheduled');
+        };
+
+        let permissions = await Notifications.getPermissionsAsync();
+        if (!permissions.granted) {
+            permissions = await Notifications.requestPermissionsAsync();
+            console.log('permissions granted');
+        }
+        if (permissions.granted) {
+            sendNotification();
+            console.log('notification sent');
+        }
+    };
+
 
     return (
         <ScrollView>
@@ -115,13 +152,19 @@ const ReservationScreen = () => {
                         onChange={onDateChange}
                     />
                 )}
-                <View style={styles.formRow}>
+                <View style={styles.formRow }>
+                    <View style={styles.formButton}>
                     <Button
                         onPress={() => handleReservation()}
                         title='Search Availability'
-                        color='#5637DD'
+                        loading={false}
+                        loadingProps={{ size: 'small', color: 'white' }}
+                        color='#ffffff'
+                        containerStyle={styles.formButton}
                         accessibilityLabel='Tap me to search for available campsites to reserve'
+
                     />
+                    </View>
                 </View>
             </Animatable.View>
         </ScrollView>
@@ -142,7 +185,16 @@ const styles = StyleSheet.create({
     },
     formItem: {
         flex: 1
-    }
+    },
+    formButton: {
+        margin: 40,
+        width: 230,
+        backgroundColor: '#5637DD',
+        borderWidth: 2,
+        borderColor: '#472EB8',
+        borderRadius: 10,
+
+    },
 });
 
 export default ReservationScreen;
