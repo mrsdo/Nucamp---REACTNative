@@ -174,10 +174,13 @@ When moving between computers with different IP addresses, update the base URL a
 ---
 
 ## Week-04
-[ ] Week-04_1 Adding Expo Secure Store
+[x] Week-04_1 Adding Expo Secure Store
 
     - Requires: npx expo install expo-secure-store
     - Needed to remove   "react-native-safe-area-context": "^4.4.1", before I could install this, not sure why.
+    - Create a new Login screen that contains a form, and uses the SecureStore API to store the login credentials
+    - Added Login to MainComponent with testings confirmed in console
+
 
 
 
