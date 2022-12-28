@@ -126,6 +126,8 @@ $ npx expo start --help
 **To run the json-server use:**
 json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000
 
+Locally installed json-server: json-server -H 172.16.1.5 --watch db.json -p 3000 -d 2000
+
 ## Week-03
 
 > NOTE about json-server
@@ -160,21 +162,19 @@ When moving between computers with different IP addresses, update the base URL a
     - Requires: npx expo install redux-persist @react-native-async-storage/async-storage
     - Requires: npx expo install redux-persist @react-native-async-storage/async-storage 
 
- [ ] Week-03_8 Workshop Assignment
+ [x] Week-03_8 Workshop Assignment
 
     - Add a zoomIn animation from Animatable
     - Remove the Modal and add an Alert
     - Open the campsite comment form modal in response to a gesture
 
-
-
 ![IOS Screen](dev-assets/IMG_1028.jpg)
 
     - Saving user data to persistent store (Client Side/Device Storage)
-
+---
 
 ## Week-04
-
+[ ] Week-04_1 Adding Expo Secure Store
 
 
 
@@ -206,4 +206,3 @@ Terminal: npm i -g npm@9.1.3
 Not sure why this occurred but now npm start has no errors
 > From terminal:
 > - watchman watch-del '/Users/mach3-dtserv/Nucamp---REACTNative.nosync' ; watchman watch-project '/Users/mach3-dtserv/Nucamp---REACTNative.nosync'
-
