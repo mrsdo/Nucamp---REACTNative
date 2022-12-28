@@ -11,7 +11,7 @@ import {CheckBox, Input} from 'react-native-elements';
 import * as SecureStore from 'expo-secure-store';
 
 // Create a function component called LoginScreen with an empty parameter list and export the component at the bottom of the file.
-export default function LoginScreen({navigation}) {
+const LoginScreen = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -127,7 +127,7 @@ export default function LoginScreen({navigation}) {
                 <View style={styles.formButton}>
                     <Button
                         title='Login'
-                        color='#5637DD'
+                        color='#ffffff'
                         onPress={() => handleLogin()}
                         containerStyle={styles.formButton}
                     />
@@ -167,10 +167,15 @@ const styles = StyleSheet.create({
         backgroundColor: null
     },
     formButton: {
-        margin: 40
+        margin: 40,
+        backgroundColor: '#5637DD',
+        borderWidth: 2,
+        borderColor: '#472EB8',
+        borderRadius: 10,
+
     },
     inputContainer: {
-        backgroundColor:'lightgray',
+        backgroundColor: null,
    },
 });
 export default LoginScreen;
