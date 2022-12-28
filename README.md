@@ -176,6 +176,10 @@ When moving between computers with different IP addresses, update the base URL a
 ## Week-04
 [ ] Week-04_1 Adding Expo Secure Store
 
+    - Requires: npx expo install expo-secure-store
+    - Needed to remove   "react-native-safe-area-context": "^4.4.1", before I could install this, not sure why.
+
+
 
 
 ## Week-05
