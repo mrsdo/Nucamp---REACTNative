@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import {PanResponder,  Alert,  StyleSheet, Text, View} from 'react-native';
+import {PanResponder,  Alert,  StyleSheet, Text, View, Share } from 'react-native';
 import {Card, Icon} from 'react-native-elements';
 import {baseUrl} from '../../shared/baseUrl';
 import * as Animatable from 'react-native-animatable'
@@ -72,6 +72,27 @@ const RenderCampsite = (props) => {
                     }
         }
     });
+/*
+Inside shareCampsite make a call to Share.share() passing in the following two arguments:
+Argument 1: An object with the following properties:
+title (you can use the object property shorthand and set this equal to nothing so it takes the value of the title parameter)
+message equal to the string literal `${title}: ${message} ${url}`.
+url (you can use the object property shorthand and set this equal to nothing so it takes the value of the url parameter)
+Argument 2: An object with one property of dialogTitle equal to 'Share ' + title.
+ */
+    const shareCampsite = (title, message, url) => {
+        Share.share(
+            {
+                title,
+                message: `${title}: ${message} ${url}`,
+                url
+            },
+            {
+                dialogTitle: 'Share ' + title
+            }
+        );
+    };
+
     if (campsite) {
         return (
             // In the return statement inside the if block, wrap the Card component with an Animatable.View component with the following props:
@@ -114,6 +135,20 @@ const RenderCampsite = (props) => {
                         raised
                         reverse
                         onPress={() => props.onShowModal()}
+                    />
+                    <Icon
+                        name='share'
+                        type='font-awesome'
+                        color='#5637DD'
+                        raised
+                        reverse
+                        onPress={() =>
+                            shareCampsite(
+                                campsite.name,
+                                campsite.description,
+                                baseUrl + campsite.image
+                            )
+                        }
                     />
                 </View>
             </Card>
