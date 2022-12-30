@@ -20,8 +20,6 @@ C
 LICENSE,0/3/0398ccd0f49298b10a3d76a47800d2ebecd49859
 L
 nucampsite/shared/baseUrl.js,7/7/77f1a30e2d8ab47cbba16d8d00d6b1e0b4c4cb75
-S
-#nucampsite/screens/ContactScreen.js,5/0/509284b0f4ba95523a88bc5f1afd49009e4190ba
 U
 %nucampsite/screens/FavoritesScreen.js,e/f/ef6c8299efc8d1769f498b6f9600dfef15dcf95d
 C
