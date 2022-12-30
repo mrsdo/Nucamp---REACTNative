@@ -83,7 +83,7 @@ const ContactNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Contact'
+                name='Contact Us'
                 component={ContactScreen}
                 options={({ navigation }) => ({
                     title: 'Contact Information',
