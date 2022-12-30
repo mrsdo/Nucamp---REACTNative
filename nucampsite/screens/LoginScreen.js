@@ -1,39 +1,30 @@
-/*
- * ../screens/LoginScreen.js | M.Dolce, React Native Portfolio, marti.dolce@29signals.org, 202212
- * Function ---
- * This file is uses the SecureStore API to store login credentials
- * ------------
- */
-
-import {useEffect, useState} from 'react';
-import {View, Button, StyleSheet} from 'react-native';
-import {CheckBox, Input} from 'react-native-elements';
+import { useEffect, useState } from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import { CheckBox, Input, Button, Icon } from 'react-native-elements';
 import * as SecureStore from 'expo-secure-store';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-// Create a function component called LoginScreen with an empty parameter list and export the component at the bottom of the file.
-const LoginScreen = () => {
+const LoginTab = ({ navigation }) => {
     const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [rememberMe, setRememberMe] = useState(false);
+    const [remember, setRemember] = useState(false);
 
-//add an event handler function called handleLogin and use console log statements to print out values of username, password, and remember to the console.
     const handleLogin = () => {
         console.log('username:', username);
-        console.log('email:', email);
         console.log('password:', password);
-        console.log('rememberMe:', rememberMe);
-        if (rememberMe) {
+        console.log('remember:', remember);
+        if (remember) {
             SecureStore.setItemAsync(
                 'userinfo',
                 JSON.stringify({
-                    username: username,
-                    email: email,
-                    password: password
+                    username,
+                    password
                 })
             ).catch((error) => console.log('Could not save user info', error));
         } else {
-            SecureStore.deleteItemAsync('userinfo').catch((error) => console.log('Could not remove user info', error));
+            SecureStore.deleteItemAsync('userinfo').catch((error) =>
+                console.log('Could not delete user info', error)
+            );
         }
     };
 
@@ -42,115 +33,124 @@ const LoginScreen = () => {
             const userinfo = JSON.parse(userdata);
             if (userinfo) {
                 setUsername(userinfo.username);
-                setEmail(userinfo.email);
                 setPassword(userinfo.password);
-                setRememberMe(true);
+                setRemember(true);
             }
         });
     }, []);
 
-
-//Add a return statement at the bottom of the LoginScreen function body and return a View component at the top level with a style prop equal to the custom style styles.container.
-
     return (
         <View style={styles.container}>
-
-            <View style={styles.inputContainer}>
-
-                <Input
-                    placeholder='Username'
-                    leftIcon={{type: 'font-awesome', name: 'user-o'}}
-                    onChangeText={(text) => setUsername(text)}
-                    value={username}
-                    containerStyle={styles.formInput}
-                    leftIconContainerStyle={styles.formIcon}
+            <Input
+                placeholder='Username'
+                leftIcon={{ type: 'font-awesome', name: 'user-o' }}
+                onChangeText={(text) => setUsername(text)}
+                value={username}
+                containerStyle={styles.formInput}
+                leftIconContainerStyle={styles.formIcon}
+            />
+            <Input
+                placeholder='Password'
+                leftIcon={{ type: 'font-awesome', name: 'key' }}
+                onChangeText={(text) => setPassword(text)}
+                value={password}
+                containerStyle={styles.formInput}
+                leftIconContainerStyle={styles.formIcon}
+            />
+            <CheckBox
+                title='Remember Me'
+                center
+                checked={remember}
+                onPress={() => setRemember(!remember)}
+                containerStyle={styles.formCheckbox}
+            />
+            <View style={styles.formButton}>
+                <Button
+                    onPress={() => handleLogin()}
+                    title='Login'
+                    color='#5637DD'
+                    icon={
+                        <Icon
+                            name='sign-in'
+                            type='font-awesome'
+                            color='#fff'
+                            iconStyle={{ marginRight: 10 }}
+                        />
+                    }
+                    buttonStyle={{ backgroundColor: '#5637DD' }}
                 />
-
-                {/*NOTE: MY EXTRA*** Add another Input component below the last one with the following props:
-                    placeholder equal to the string 'envelope'. leftIcon equal to an object with a type property
-                    of 'font-awesome' and a name property of 'email'. onChangeText equal to a function with
-                    text as the parameter and a call to setEmail(text) in the body. value equal to email. A
-                    containerStyle equal to the custom style styles.formInput. leftIconContainerStyle equal to
-                    the custom style styles.formIcon.*/}
-
-                <Input
-                    placeholder='Email'
-                    leftIcon={{type: 'font-awesome', name: 'envelope'}}
-                    onChangeText={(text) => setEmail(text)}
-                    value={email}
-                    containerStyle={styles.formInput}
-                    leftIconContainerStyle={styles.formIcon}
+            </View>
+            <View style={styles.formButton}>
+                <Button
+                    onPress={() => navigation.navigate('Register')}
+                    title='Register'
+                    type='clear'
+                    icon={
+                        <Icon
+                            name='user-plus'
+                            type='font-awesome'
+                            color='blue'
+                            iconStyle={{ marginRight: 10 }}
+                        />
+                    }
+                    titleStyle={{ color: 'blue' }}
                 />
-
-
-                {/*//Add another Input component below the last one with the following props: placeholder equal
-                to the string 'Password'. leftIcon equal to an object with a type property of
-                'font-awesome' and a name property of 'key'. onChangeText equal to a function with text as
-                the parameter and a call to setPassword(text) in the body. value equal to password.
-                containerStyle equal to the custom style styles.formInput. leftIconContainerStyle equal to
-                the custom style styles.formIcon.*/}
-                <Input
-                    placeholder='Password'
-                    leftIcon={{type: 'font-awesome', name: 'key'}}
-                    onChangeText={(text) => setPassword(text)}
-                    value={password}
-                    containerStyle={styles.formInput}
-                    leftIconContainerStyle={styles.formIcon}
-                />
-
-               {/* //Below the second Input add a CheckBox component with a self-closing tag with the following
-                props:
-                // title equal to the string 'Remember Me'.
-                // center as a Boolean prop equal to nothing.
-                // checked equal to remember.
-                // onPress equal to a function with no parameters and a call to setRemember(!remember) in
-                the body.
-                // containerStyle equal to the custom style styles.formCheckbox.*/}
-                <CheckBox
-                    title='Remember Me'
-                    center
-                    checked={rememberMe}
-                    onPress={() => setRememberMe(!rememberMe)}
-                    containerStyle={styles.formCheckbox}
-                />
-
-                {/*//Below the checkbox but still between the View tags add another View component with a style
-                prop equal to the custom
-                style styles.formButton.
-                // Inside the new View add a Button component with a self-closing tag with the following
-                props:
-                // onPress equal to a function that calls the handleLogin event handler.
-                // title equal to the string 'Login'.
-                // color equal to the string '#5637DD'.
-                // containerStyle equal to the custom style styles.formButton.*/}
-
-                <View style={styles.formButton}>
-                    <Button
-                        title='Login'
-                        color='#ffffff'
-                        onPress={() => handleLogin()}
-                        containerStyle={styles.formButton}
-                    />
-                </View>
             </View>
         </View>
     );
-
 };
-//At the bottom of the file outside the LoginScreen function body create a constant called
-// styles equal to StyleSheet.create() passing an object with the following style rules:
-// container
-// justifyContent: 'center'
-// margin: 20
-// formIcon
-// marginRight: 10
-// formInput
-// padding: 10
-// formCheckbox
-// margin: 10
-// backgroundColor: null
-// formButton
-// margin: 40
+
+const RegisterTab = () => {
+    return <ScrollView></ScrollView>;
+};
+
+const Tab = createBottomTabNavigator();
+
+const LoginScreen = () => {
+    const tabBarOptions = {
+        activeBackgroundColor: '#5637DD',
+        inactiveBackgroundColor: '#CEC8FF',
+        activeTintColor: '#fff',
+        inactiveTintColor: '#808080',
+        labelStyle: { fontSize: 16 }
+    };
+
+    return (
+        <Tab.Navigator tabBarOptions={tabBarOptions}>
+            <Tab.Screen
+                name='Login'
+                component={LoginTab}
+                options={{
+                    tabBarIcon: (props) => {
+                        return (
+                            <Icon
+                                name='sign-in'
+                                type='font-awesome'
+                                color={props.color}
+                            />
+                        );
+                    }
+                }}
+            />
+            <Tab.Screen
+                name='Register'
+                component={RegisterTab}
+                options={{
+                    tabBarIcon: (props) => {
+                        return (
+                            <Icon
+                                name='user-plus'
+                                type='font-awesome'
+                                color={props.color}
+                            />
+                        );
+                    }
+                }}
+            />
+        </Tab.Navigator>
+    );
+};
+
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
@@ -167,15 +167,8 @@ const styles = StyleSheet.create({
         backgroundColor: null
     },
     formButton: {
-        margin: 40,
-        backgroundColor: '#5637DD',
-        borderWidth: 2,
-        borderColor: '#472EB8',
-        borderRadius: 10,
-
-    },
-    inputContainer: {
-        backgroundColor: null,
-   },
+        margin: 40
+    }
 });
+
 export default LoginScreen;
