@@ -174,13 +174,48 @@ When moving between computers with different IP addresses, update the base URL a
 ---
 
 ## Week-04
-[x] Week-04_1 Adding Expo Secure Store
+[x] Week-04 Adding Expo Secure Store
 
     - Requires: npx expo install expo-secure-store
     - Needed to remove   "react-native-safe-area-context": "^4.4.1", before I could install this, not sure why.
     - Create a new Login screen that contains a form, and uses the SecureStore API to store the login credentials
     - Added Login to MainComponent with testings confirmed in console
 
+[ ] Week-04_1 Building Android Package
+
+    - Resources: https://expo.dev/accounts/mrsdo/projects/nucampsite/builds
+    - Requires: npm install -g eas-cli and 
+    - eas login
+    - Use the Expo Application Services (EAS) to build an .apk (Android Package) file
+    - Use: npx eas build --platform android --profile preview to build the package
+    - Install the package: Click on link provided in bash terminal to install
+    - Drag the *.apk file to emulator screen 
+    - After installation complete, visit home page on android emulator screen, click on the nucampsite icon
+    - Send URL to self and open on android device screen.
+
+    > - Screen output contains:
+    MACH10-USB:nucampsite mrsdo$ npx eas build --platform android --profile preview
+
+📝  Android application id Learn more: https://expo.fyi/android-package
+✔ What would you like your Android application id to be? … com.mrsdo.nucampsite.android
+✔ Using remote Android credentials (Expo server)
+✔ Generate a new Android Keystore? … yes
+Detected that you do not have keytool installed locally.
+✔ Generating keystore in the cloud...
+✔ Created keystore
+
+Compressing project files and uploading to EAS Build. Learn more: https://expo.fyi/eas-build-archive
+✔ Uploaded to EAS 6s
+
+Build details: https://expo.dev/accounts/mrsdo/projects/nucampsite/builds/c834ff65-0bb9-4d78-b3ec-39bd80b6f5f6
+
+Waiting for build to complete. You can press Ctrl+C to exit.
+✔ Build finished
+
+🤖 Android app:
+https://expo.dev/artifacts/eas/qHUd9D5TyfRoxFrP2tszY3.apk
+
+? Install and run the Android build on an emulator? › (Y/n)
 
 
 
@@ -191,6 +226,9 @@ When moving between computers with different IP addresses, update the base URL a
 
 ---
 ## NOTES FROM REACT Course
+
+### Expo Docs
+Creating first build: https://docs.expo.dev/build/setup/
 
 ### How to save console output?
 **TODO**: [Configure console output to file path](https://blog.logrocket.com/reviewing-react-native-console-logs-best-practices/)

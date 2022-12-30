@@ -50,5 +50,3 @@ _
 /nucampsite/features/campsites/campsitesSlice.js,6/9/69d8f96cbf7f18d104dcd405ecbb9ecde193f555
 S
 #nucampsite/screens/MainComponent.js,6/a/6a9807ee5602a9a7fcfb47d6ff5895650d414617
-G
-nucampsite/package.json,e/4/e4926c2183ebcb261b5c8dbe4890deec97724f90
