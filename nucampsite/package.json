@@ -43,7 +43,8 @@
     "@expo/webpack-config": "^0.17.2",
     "expo-image-manipulator": "~11.0.0",
     "expo-mail-composer": "~12.0.0",
-    "expo-image-picker": "~14.0.2"
+    "expo-image-picker": "~14.0.2",
+    "@react-navigation/bottom-tabs": "6.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5"
