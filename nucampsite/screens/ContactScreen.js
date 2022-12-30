@@ -7,6 +7,7 @@ const ContactScreen = () => {
     const sendMail = () => {
         MailComposer.composeAsync({
             recipients: ['twenty9signals@outlook.com'],
+            ccRecipients: 'campsites@nucamp.co',
             subject: 'Inquiry',
             body: 'To whom it may concern:'
         }).catch(() =>
@@ -40,7 +41,7 @@ const ContactScreen = () => {
                                 iconStyle={{ marginRight: 10 }}
                             />
                         }
-                        onPress={() => Linking.openURL('mailto:twenty9signals@outlook.com?subject=Inquiry&body=To Whom It May Concern') }
+                        onPress={() => Linking.openURL('mailto:twenty9signals@outlook.com, marti.dolce@29signals.org?subject=Inquiry&body=To Whom It May Concern') }
 
                     />
                 </Card>
