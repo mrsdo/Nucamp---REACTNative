@@ -1,6 +1,18 @@
-// noinspection BadExpressionStatementJS
-
-import {Alert, Image, Platform, StyleSheet, Text, View} from 'react-native';
+/*
+ * ../screens/MainComponent.js | M.Dolce, React Native Portfolio, marti.dolce@29signals.org, 202212
+ * Function ---
+ * Task 3: Implement async/await for NetInfo.fetch()
+ * ------------
+ */
+import {
+    Image,
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    Alert,
+    ToastAndroid
+} from 'react-native';
 import Constants from 'expo-constants';
 import CampsiteInfoScreen from './CampsiteInfoScreen';
 import DirectoryScreen from './DirectoryScreen';
@@ -39,10 +51,10 @@ const HomeNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Nucamp Campsites'
+                name='Home'
                 component={HomeScreen}
                 options={({ navigation }) => ({
-                    title: 'Welcome',
+                    title: 'Home',
                     headerLeft: () => (
                         <Icon
                             name='home'
@@ -56,7 +68,6 @@ const HomeNavigator = () => {
         </Stack.Navigator>
     );
 };
-
 
 const AboutNavigator = () => {
     const Stack = createStackNavigator();
@@ -85,7 +96,7 @@ const ContactNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Contact Us'
+                name='Contact'
                 component={ContactScreen}
                 options={({ navigation }) => ({
                     title: 'Contact Us',
@@ -102,7 +113,6 @@ const ContactNavigator = () => {
         </Stack.Navigator>
     );
 };
-
 
 const ReservationNavigator = () => {
     const Stack = createStackNavigator();
@@ -127,13 +137,12 @@ const ReservationNavigator = () => {
     );
 };
 
-
 const FavoritesNavigator = () => {
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Stack Favorites'
+                name='Favorites'
                 component={FavoritesScreen}
                 options={({ navigation }) => ({
                     title: 'Favorite Campsites',
@@ -151,13 +160,12 @@ const FavoritesNavigator = () => {
     );
 };
 
-
 const LoginNavigator = () => {
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Account Access'
+                name='User Login'
                 component={LoginScreen}
                 options={({ navigation, route }) => ({
                     headerTitle: getFocusedRouteNameFromRoute(route),
@@ -188,10 +196,10 @@ const DirectoryNavigator = () => {
             screenOptions={screenOptions}
         >
             <Stack.Screen
-                name='Campsite Directory'
+                name='Directory'
                 component={DirectoryScreen}
                 options={({ navigation }) => ({
-                    title: 'Campsites',
+                    title: 'Campsite Directory',
                     headerLeft: () => (
                         <Icon
                             name='list'
@@ -212,6 +220,7 @@ const DirectoryNavigator = () => {
         </Stack.Navigator>
     );
 };
+
 const CustomDrawerContent = (props) => (
     <DrawerContentScrollView {...props}>
         <View style={styles.drawerHeader}>
@@ -236,9 +245,52 @@ const Main = () => {
         dispatch(fetchComments());
     }, [dispatch]);
 
+    useEffect(() => {
+       showNetInfo();
 
+        const unsubscribeNetInfo = NetInfo.addEventListener(
+            (connectionInfo) => {
+                handleConnectivityChange(connectionInfo);
+            }
+        );
 
+        return unsubscribeNetInfo;
+    }, []);
 
+    const handleConnectivityChange = (connectionInfo) => {
+        let connectionMsg = 'You are now connected to an active network.';
+        switch (connectionInfo.type) {
+            case 'none':
+                connectionMsg = 'No network connection is active.';
+                break;
+            case 'unknown':
+                connectionMsg = 'The network connection state is now unknown.';
+                break;
+            case 'cellular':
+                connectionMsg = 'You are now connected to a cellular network.';
+                break;
+            case 'wifi':
+                connectionMsg = 'You are now connected to a WiFi network.';
+                break;
+        }
+        Platform.OS === 'ios'
+            ? Alert.alert('Connection change:', connectionMsg)
+            : ToastAndroid.show(connectionMsg, ToastAndroid.LONG);
+    };
+    const showNetInfo = async () => {
+        const connectionInfoSubscription = await NetInfo.fetch().then((connectionInfo) => {
+
+            Platform.OS === 'ios'
+                ? Alert.alert(
+                    'Initial Network Connectivity Type:',
+                    connectionInfo.type
+                )
+                : ToastAndroid.show(
+                    'Initial Network Connectivity Type: ' +
+                    connectionInfo.type,
+                    ToastAndroid.LONG
+                );
+        })};
     return (
         <View
             style={{
