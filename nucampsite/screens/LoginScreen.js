@@ -1,3 +1,10 @@
+/*
+ * ../screens/LoginScreen.js | M.Dolce, React Native Portfolio, marti.dolce@29signals.org, 202212
+ * Function ---
+ * Task 1: Resize a photo and convert it to PNG
+ * Task 2: Add choosing from image gallery option
+ * ------------
+ */
 import { useEffect, useState } from 'react';
 import { View, StyleSheet, ScrollView, Image } from 'react-native';
 import { CheckBox, Input, Button, Icon } from 'react-native-elements';
