@@ -22,8 +22,6 @@ L
 nucampsite/shared/baseUrl.js,7/7/77f1a30e2d8ab47cbba16d8d00d6b1e0b4c4cb75
 U
 %nucampsite/screens/FavoritesScreen.js,e/f/ef6c8299efc8d1769f498b6f9600dfef15dcf95d
-C
-nucampsite/app.json,3/c/3ceb8208acfb067e2ab9b10c0e5213f77a0a262b
 Y
 )nucampsite/components/LoadingComponent.js,3/d/3dbf2b8352c4c18954318e9605ba0b829a6cce62
 ]

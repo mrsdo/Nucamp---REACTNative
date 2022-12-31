@@ -20,6 +20,7 @@ import {
 } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
 // create a const called config equal to an object with the following properties:
 // key equal to the string 'root'.
 // storage equal to AsyncStorage.
