@@ -1,4 +1,6 @@
-import { Image, Platform, StyleSheet, Text, View } from 'react-native';
+// noinspection BadExpressionStatementJS
+
+import {Alert, Image, Platform, StyleSheet, Text, View} from 'react-native';
 import Constants from 'expo-constants';
 import CampsiteInfoScreen from './CampsiteInfoScreen';
 import DirectoryScreen from './DirectoryScreen';
@@ -23,6 +25,7 @@ import { fetchComments } from '../features/comments/commentsSlice';
 import FavoritesScreen from './FavoritesScreen';
 import LoginScreen from './LoginScreen';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/core';
+import NetInfo from '@react-native-community/netinfo';
 
 const Drawer = createDrawerNavigator();
 
@@ -232,6 +235,9 @@ const Main = () => {
         dispatch(fetchPartners());
         dispatch(fetchComments());
     }, [dispatch]);
+
+
+
 
     return (
         <View
